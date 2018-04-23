@@ -4,16 +4,20 @@
 
 namespace Sample
 {
-    class RedactMoney
+    class RedactMoneys
     {
-        static void Example()
+        public static void RedactMoney_()
         {
-            using (APRedactor.Redactor redact = new APRedactor.Redactor("Example.pdf", null))
+            string strPath;
+            strPath = System.AppDomain.CurrentDomain.BaseDirectory + "\\";
+            
+            
+            using (APRedactor.Redactor redact = new APRedactor.Redactor(strPath + "InputFiles\\fw4.pdf", null))
             {
                 redact.TextMode = APRedactor.Redactor.TextRedactionMode.Regex;
                 redact.RegularExpression = APRedactor.RegexPresets.USD;
                 int redactionsPerformed = redact.Redact();
-                redact.Save("RedactedExample.pdf");
+                redact.Save(strPath + "OutPutFiles\\RedactMoneyOutput.pdf");
             }
         }
     }
