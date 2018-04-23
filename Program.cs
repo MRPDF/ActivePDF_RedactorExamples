@@ -12,7 +12,8 @@ namespace ConsoleApplication1
         {
             //Sample.ChangeColors.ChangeColor_();
             //Sample.RedactByRegions.RedactByRegion_();
-            Sample.RedactEntirePages.RedactEntirePage_();
+            //Sample.RedactEntirePages.RedactEntirePage_();
+            Sample.RedactImages.RedactImage_();
         }
     }
 }

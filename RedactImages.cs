@@ -6,13 +6,16 @@ namespace Sample
 {
     class RedactImages
     {
-        static void Example()
+        public static void RedactImage_()
         {
-            using (APRedactor.Redactor redact = new APRedactor.Redactor("Example.pdf", null))
+            string strPath;
+            strPath = System.AppDomain.CurrentDomain.BaseDirectory + "\\";
+
+            using (APRedactor.Redactor redact = new APRedactor.Redactor(strPath + "InputFiles\\1pageWithImage.pdf", null))
             {
                 redact.ImageMode = APRedactor.Redactor.ImageRedactionMode.Unconditional;
                 int redactionsPerformed = redact.Redact();
-                redact.Save("RedactedExample.pdf");
+                redact.Save(strPath + "OutPutFiles\\RedactedImagesOutput.pdf");
             }
         }
     }
