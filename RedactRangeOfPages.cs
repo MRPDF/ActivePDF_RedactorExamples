@@ -8,17 +8,20 @@ namespace Sample
 {
     class RedactRangeOfPages
     {
-        static void Example()
+        public static void RedactRangeOfPage_()
         {
-            using (APRedactor.Redactor redact = new APRedactor.Redactor(@"C:\Example.pdf", null))
+            string strPath;
+            strPath = System.AppDomain.CurrentDomain.BaseDirectory + "\\";
+
+            using (APRedactor.Redactor redact = new APRedactor.Redactor(strPath + "InputFiles\\LoremIpsumSample.pdf", null))
             {
-                redact.LiteralText = "Hello, world!";
+                redact.LiteralText = "Lorem";
                 redact.TextMode = APRedactor.Redactor.TextRedactionMode.LiteralText;
                 Debug.Assert(redact.PageTotal >= 10);
                 redact.FirstPage = 5;
                 redact.LastPage = 10;
                 int redactionsPerformed = redact.Redact();
-                redact.Save("RedactedExample.pdf");
+                redact.Save(strPath + "OutPutFiles\\RangeOfPagesOutput.pdf");
             }
         }
     }

@@ -14,7 +14,8 @@ namespace ConsoleApplication1
             //Sample.RedactByRegions.RedactByRegion_();
             //Sample.RedactEntirePages.RedactEntirePage_();
             //Sample.RedactImages.RedactImage_();
-            Sample.RedactMoneys.RedactMoney_();
+            //Sample.RedactMoneys.RedactMoney_();
+            Sample.RedactRangeOfPages.RedactRangeOfPage_();
         }
     }
 }
