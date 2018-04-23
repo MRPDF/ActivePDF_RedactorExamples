@@ -4,15 +4,18 @@
 
 namespace Sample
 {
-    class RedactEntirePage
+    class RedactEntirePages
     {
-        static void Example()
+        public static void RedactEntirePage_()
         {
-            using (APRedactor.Redactor redact = new APRedactor.Redactor("Example.pdf", null))
+            string strPath;
+            strPath = System.AppDomain.CurrentDomain.BaseDirectory + "\\";
+
+            using (APRedactor.Redactor redact = new APRedactor.Redactor(strPath + "InputFiles\\1page.pdf", null))
             {
                 redact.TextMode = APRedactor.Redactor.TextRedactionMode.Unconditional;
                 int redactionsPerformed = redact.Redact();
-                redact.Save("RedactedExample.pdf");
+                redact.Save(strPath + "OutPutFiles\\RedactedEntirePageOutput.pdf");
             }
         }
     }

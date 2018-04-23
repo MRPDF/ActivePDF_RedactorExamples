@@ -8,9 +8,12 @@ namespace Sample
 {
     class RedactByRegions
     {
-        static void RedactByRegion()
+        public static void RedactByRegion_()
         {
-            using (APRedactor.Redactor redact = new APRedactor.Redactor("Example.pdf", null))
+            string strPath;
+            strPath = System.AppDomain.CurrentDomain.BaseDirectory + "\\";
+
+            using (APRedactor.Redactor redact = new APRedactor.Redactor(strPath + "InputFiles\\5pageLoremIpsum.pdf", null))
             {
                 redact.TextMode = APRedactor.Redactor.TextRedactionMode.Region;
                 redact.ImageMode = APRedactor.Redactor.ImageRedactionMode.Region;
@@ -32,7 +35,7 @@ namespace Sample
                     int redactionsPerformed = redact.Redact();
                 }
 
-                redact.Save("RedactedExample.pdf");
+                redact.Save(strPath + "OutPutFiles\\5pageLoremIpsumOutPutRedacted.pdf");
             }
         }
     }

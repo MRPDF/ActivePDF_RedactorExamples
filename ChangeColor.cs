@@ -9,7 +9,10 @@ namespace Sample
     {
         public static void ChangeColor_()
         {
-            using (APRedactor.Redactor redact = new APRedactor.Redactor("InputFiles\\LoremIpsumSample.pdf", null))
+            string strPath;
+            strPath = System.AppDomain.CurrentDomain.BaseDirectory + "\\";
+
+            using (APRedactor.Redactor redact = new APRedactor.Redactor(strPath + "InputFiles\\LoremIpsumSample.pdf", null))
             {
                 redact.ReplacementColor = new APRedactor.Color(255, 0, 0);
                 redact.LiteralText = "Lorem";
