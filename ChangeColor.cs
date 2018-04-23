@@ -3,7 +3,7 @@
  * Replaces the removed text with a red box instead of the default black box.
  */
 
-namespace ChangeColorSample
+namespace Sample
 {
     class ChangeColors
     {

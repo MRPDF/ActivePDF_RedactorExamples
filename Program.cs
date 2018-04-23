@@ -10,7 +10,8 @@ namespace ConsoleApplication1
     {
         static void Main(string[] args)
         {
-            ChangeColorSample.ChangeColors.ChangeColor_();
+            Sample.ChangeColors.ChangeColor_();
+
         }
     }
 }

@@ -6,9 +6,9 @@
 
 namespace Sample
 {
-    class RedactByRegion
+    class RedactByRegions
     {
-        static void Example()
+        static void RedactByRegion()
         {
             using (APRedactor.Redactor redact = new APRedactor.Redactor("Example.pdf", null))
             {
