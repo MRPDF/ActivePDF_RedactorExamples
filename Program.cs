@@ -18,7 +18,9 @@ namespace ConsoleApplication1
             //Sample.RedactRangeOfPages.RedactRangeOfPage_();
             //Sample.RedactTextAndImages.RedactTextAndImage_();
             //Sample.RedactTexts.RedactText_();
-            Sample.RegexExclusions.RegexExclusion_();
+            //Sample.RegexExclusions.RegexExclusion_();
+            //Sample.RedactionEvents.RedactionEvent_();
+            Sample.SaveOptions.SaveOption_();
 
         }
     }

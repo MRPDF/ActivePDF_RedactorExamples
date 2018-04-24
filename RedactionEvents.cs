@@ -1,6 +1,7 @@
 ﻿/*
- * Redacts all instances of "Hello, world!" (not case sensitive) in the document.
+ * Redacts all instances of "Lorem" (not case sensitive) in the document.
  * Logs status messages to the console as the redaction process runs.
+ * You would want to use something like this to confirm redactor is not crashing on a large file.
  */
 
 using System;
@@ -10,16 +11,19 @@ namespace Sample
 {
     class RedactionEvents
     {
-        static void Example()
+        public static void RedactionEvent_()
         {
-            using (APRedactor.Redactor redact = new APRedactor.Redactor("Example.pdf", null))
+            string strPath;
+            strPath = System.AppDomain.CurrentDomain.BaseDirectory + "\\";
+
+            using (APRedactor.Redactor redact = new APRedactor.Redactor(strPath + "InputFiles\\1page.pdf", null))
             {
                 redact.TextMode = APRedactor.Redactor.TextRedactionMode.LiteralText;
-                redact.LiteralText = "Hello, world!";
+                redact.LiteralText = "Lorem";
                 redact.PageBegin += RedactorEvent;
                 redact.PageComplete += RedactorEvent;
                 int redactionsPerformed = redact.Redact();
-                redact.Save("RedactedExample.pdf");
+                redact.Save(strPath + "OutPutFiles\\RedactionEventsOutput.pdf");
             }
         }
 

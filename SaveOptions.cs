@@ -1,5 +1,5 @@
 ﻿/*
- * Redacts the text "hello, world!" (not case sensitive) wherever it is found in the document.
+ * Redacts the text "Lorem" (not case sensitive) wherever it is found in the document.
  * Also uses the bitwise-or operator to combine many different options for how the document
  * should be saved before saving it, resulting in a compressed, optimized, fast-web-view enabled file.
  */
@@ -8,9 +8,12 @@ namespace Sample
 {
     class SaveOptions
     {
-        static void Example()
+        public static void SaveOption_()
         {
-            using (APRedactor.Redactor redact = new APRedactor.Redactor("Example.pdf", null))
+            string strPath;
+            strPath = System.AppDomain.CurrentDomain.BaseDirectory + "\\";
+
+            using (APRedactor.Redactor redact = new APRedactor.Redactor(strPath + "Inputfiles\\5pageLoremIpsum.pdf", null))
             {
                 APRedactor.Redactor.SaveOptions options =
                     APRedactor.Redactor.SaveOptions.CleanContentStreams |
@@ -21,10 +24,10 @@ namespace Sample
                     APRedactor.Redactor.SaveOptions.Linearize |
                     APRedactor.Redactor.SaveOptions.SanitizeContentStreams;
 
-                redact.LiteralText = "Hello, world!";
+                redact.LiteralText = "Lorem";
                 redact.TextMode = APRedactor.Redactor.TextRedactionMode.LiteralText;
                 int redactionsPerformed = redact.Redact();
-                redact.Save("RedactedExample.pdf", options);
+                redact.Save(strPath + "OutPutFiles\\SaveOptionsOutput.pdf", options);
             }
         }
     }
