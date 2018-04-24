@@ -13,10 +13,13 @@ namespace ConsoleApplication1
             //Sample.ChangeColors.ChangeColor_();
             //Sample.RedactByRegions.RedactByRegion_();
             //Sample.RedactEntirePages.RedactEntirePage_();
-            Sample.RedactImages.RedactImage_();
+            //Sample.RedactImages.RedactImage_();
             //Sample.RedactMoneys.RedactMoney_();
             //Sample.RedactRangeOfPages.RedactRangeOfPage_();
-            Sample.RedactTextAndImages.RedactTextAndImage_();
+            //Sample.RedactTextAndImages.RedactTextAndImage_();
+            //Sample.RedactTexts.RedactText_();
+            Sample.RegexExclusions.RegexExclusion_();
+
         }
     }
 }

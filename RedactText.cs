@@ -4,16 +4,20 @@
 
 namespace Sample
 {
-    class RedactText
+    class RedactTexts
     {
-        static void Example()
+       public static void RedactText_()
         {
-            using (APRedactor.Redactor redact = new APRedactor.Redactor("Example.pdf", null))
+            string strPath;
+            strPath = System.AppDomain.CurrentDomain.BaseDirectory + "\\";
+
+            using (APRedactor.Redactor redact = new APRedactor.Redactor(strPath + "InputFiles\\5pageLoremIpsum.pdf", null))
             {
-                redact.LiteralText = "hello, world!";
+
+                redact.LiteralText = "Lorem";
                 redact.TextMode = APRedactor.Redactor.TextRedactionMode.LiteralText;
                 int redactionsPerformed = redact.Redact();
-                redact.Save("RedactedExample.pdf");
+                redact.Save(strPath + "OutPutFiles\\RedactTextOutPut.pdf");
             }
         }
     }
