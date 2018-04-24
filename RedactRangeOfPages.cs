@@ -1,5 +1,5 @@
 ﻿/*
- * Redacts the text "Hello, world!" (not case sensitive) from pages 5-10 only.
+ * Redacts the text "Lorem" (not case sensitive) from pages 5-10 only.
  */
 
 using System.Diagnostics;

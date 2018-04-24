@@ -1,5 +1,5 @@
 ﻿/*
- * Redacts the text "hello, world!" (not case sensitive) wherever it is found in the document.
+ * Redacts the text "Lorem" (not case sensitive) wherever it is found in the document.
  */
 
 namespace Sample
